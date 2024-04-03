@@ -2,8 +2,8 @@
 
 namespace Sts\Controllers;
 
-class Erro {
+class Slide {
     public function index() {
-        echo "Erro - Página não encontrada";
+        echo "Página de apresentação";
     }
 }
