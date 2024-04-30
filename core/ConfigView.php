@@ -1,32 +1,33 @@
 <?php
- 
- namespace Core;
+    namespace Core;
 
- class ConfigView{
-    private string $nome;
-    
-    private string $dados;
-
-    public function __construct(string $nome, array $dados){
-        $this->nome = $nome;
-        $this->dados = $dados;
-        //var_dump($this->nome);
-        //var_dump($this->dados);
-
-    }
-
-    public function rendernizar(){
-        if (file_exist( 'app/' . $this->nome . 'php')){
-            include 'app/' . $this->nome . '.php';
-        
-        }else {
-
-            echo "Erro Por favor se tente novamente.
-            se o erro persistir entre em contato com um 
-            administrador";
+    if(!defined('C7E3L8K9ES')){
+        header('Location: /');
+        die('Erro : Página não encontrada! <br>');
+      }
+    /**carregar as pagina da View 
+     * @author Gabriel <ioserro53@gmail.com>
+    */
+    class ConfigView{
+        /** Receber o endereço da View e os dados
+         * @param string $nameView endereço da VIEW que deve ser carregada
+         * @param array |string|null $data dados que a view deve receber
+        */
+        public function __construct(private string $nameView, private array|string|null $data){
+            //php 8 
         }
+        /**
+         * carrega View.
+         * verificar se o arquivo existe, e carregar caso, nao existe para o carregamento
+         * @return void
+         */
+        public function loadView() : void {
+            if(file_exists('app/'. $this->nameView . '.php')){
+                include 'app/'. $this->nameView . '.php';
+            }else{
+                die("Erro: Por Favor tente novamento. Caso o problema persista,
+                entre em contato o administrado". EMAILADM);
+            }
+        }
+
     }
- }
-
-
-?>

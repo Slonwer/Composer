@@ -1,19 +1,17 @@
 {
-    "description": "Php",
+    "description": "EVERTON PHP OOP",
     "authors": [
         {
-            "name": "Slackwert",
-            "email": "ioserro53@Gmail.com"
-            
+            "name": "EVERTON LIMA",
+            "email": "everton.carlospv@gmail.com"
         }
-        
     ],
     "autoload": {
         "psr-4": {
+            "App\\":"app",
             "Sts\\": "app/sts",
             "Core\\": "core"
         }
-    }
-    
-    
+    },
+    "require": {}
 }
