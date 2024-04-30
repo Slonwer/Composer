@@ -14,7 +14,7 @@
    * Models responsavel em buscas os dados da pagina home
    * @author Everton <everton.carlospv@gmail.com>
    */
-  class StsConn {
+   abstract class StsConn {
 
     /**@var string $host recebe o host da constante HOST*/
     private string $host = HOST;
@@ -30,6 +30,7 @@
     
     /** @var int|string $port recebe a porta da constante PORT*/
     private string $port = PORT;
+
 
     /**@var string $connect recebe a conexao com o banco dados */
     private object $connect;
